@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-header">
+    <h1>Product List</h1> 
+  <button class="pull-right" (click)="addProduct()">Add product</button>
+</div>
+  <div class="card-body">
+    <p *ngIf="saveProductInfo?.error" class="text-danger">
+      {{saveProductInfo.error}}
+    </p>
+    <p *ngIf="saveProductInfo?.message" class="text-success">
+      {{saveProductInfo.message}}
+    </p>
+    
+    <table class="table table-bordered table-sm">
+      <thead>
+        <tr>
+          <th>Product Id</th>
+          <th>Product Name</th>
+          <th>Category</th>
+          <th>Manufacturer</th>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{product.productId}}</td>
+          <td>{{product.productName}}</td>
+          <td>{{product.category}}</td>
+          <td>{{product.manufacturer}}</td>
+          <td>{{product.description}}</td>
+          <td>{{product.price}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div>
